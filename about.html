@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - My Digital Portfolio</title>
+    <title>About Me | Marc Jherrim Dumapis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,127 +16,132 @@
 <body>
 
     <header>
-        <nav>
-            <h2>My Portfolio</h2>
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <span class="brand-initial">M</span>
+                <span>Marc Jherrim Dumapis</span>
+            </a>
 
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
-                <li><a href="about.html">Personal Information</a></li>
+                <li><a href="about.html" class="active">Personal Information</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main class="section">
 
-        <p class="section-label">GET TO KNOW ME</p>
-
-        <h1>About Me</h1>
-
-        <p class="section-description">
-            Greetings! I'm MJ, a student passionate about technology, design, and continuous learning. 
-            This portfolio serves as a collection of my growth, projects, and future aspirations.
-        </p>
-
-       <!-- Main Profile & Overview Cards -->
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="mee.jpg" alt="Profile Photo">
-                </div>
-                <h3>Who I Am</h3>
-                <p>
-                    I've come to enjoy exploring how code and creative design come together to solve real-world problems through practicality and to build meaningful experiences.
-                </p>
-                <span>BACKGROUND</span>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="code.jpg" alt="Academic Photo">
-                </div>
-                <h3>Academic Focus</h3>
-                <p>
-                    Currently focused on expanding my skills in software development, web design, and logical problem solving.
-                </p>
-                <span>EDUCATION</span>
-            </div>
-
-            <div class="card">
-                <div class="card-image">
-                    <img src="bbook.jpg" alt="Personal Interest Photo">
-                </div>
-                <h3>Beyond the Code</h3>
-                <p>
-                    Outside of academics, I stay curious by exploring creative writing, design concepts, and personal projects.
-                </p>
-                <span>INTERESTS</span>
-            </div>
-
+        <div class="section-heading">
+            <p class="eyebrow">Get to Know Me</p>
+            <h1>About Me</h1>
+            <p class="section-description">
+                I am MJ, a student passionate about technology, design, and continuous learning.
+                This portfolio presents my growth, experiences, and future aspirations.
+            </p>
         </div>
 
-        <!-- Comprehensive Personal & Academic Information Grid -->
-        <div class="info-sections">
+        <div class="cards">
+            <article class="card">
+                <div class="card-image">
+                    <img src="mee.jpg" alt="Profile photo of Marc Jherrim Dumapis">
+                </div>
 
-            <!-- 1. Personal & Contact Details -->
+                <div class="card-content">
+                    <h3>Who I Am</h3>
+                    <p>
+                        I enjoy exploring how code and creative design can solve
+                        real-world problems and create meaningful experiences.
+                    </p>
+                    <span>Background</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="code.jpg" alt="Academic and technology photo">
+                </div>
+
+                <div class="card-content">
+                    <h3>Academic Focus</h3>
+                    <p>
+                        Currently developing skills in software development,
+                        web design, and logical problem-solving.
+                    </p>
+                    <span>Education</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="bbook.jpg" alt="Creative writing and personal interests photo">
+                </div>
+
+                <div class="card-content">
+                    <h3>Beyond the Code</h3>
+                    <p>
+                        Outside academics, I explore creative writing, design
+                        concepts, and personal projects.
+                    </p>
+                    <span>Interests</span>
+                </div>
+            </article>
+        </div>
+
+        <div class="info-sections">
             <section class="info-group">
-                <h2>Personal & Contact Details</h2>
+                <h2>Personal Details</h2>
+
                 <ul class="info-list">
                     <li><strong>Full Name:</strong> Marc Jherrim G. Dumapis</li>
-                    <li><strong>Preferred Name / Alias:</strong> M.J.</li>
+                    <li><strong>Preferred Name:</strong> M.J.</li>
                     <li><strong>Email:</strong> marcjherr@gmail.com</li>
                     <li><strong>Location:</strong> Baguio City, Philippines</li>
                     <li><strong>Birthdate:</strong> April 27</li>
-                    <li><strong>Civil Status:</strong> Single</li>
-                    <li><strong>Languages Spoken:</strong> English, Tagalog, Ilocano</li>
+                    <li><strong>Languages:</strong> English, Tagalog, Ilocano</li>
                 </ul>
             </section>
 
-            <!-- 2. Academic & Institutional Info -->
             <section class="info-group">
                 <h2>Academic Information</h2>
+
                 <ul class="info-list">
-                    <li><strong>Student ID:</strong> 26-4962-929</li>
-                    <li><strong>Degree Program:</strong> BS Information Technology</li>
-                    <li><strong>Specialization / Track:</strong> Network and Security</li>
-                    <li><strong>Year Level & Status:</strong> 1st Year - Regular</li>
-                    <li><strong>Section / Block:</strong> CITCS 1E-Group A</li>
-                    <li><strong>Instructor / Adviser:</strong> Felipe A. Pati, Jr., MCS, PhD</li>
+                    <li><strong>Program:</strong> BS Information Technology</li>
+                    <li><strong>Specialization:</strong> Network and Security</li>
+                    <li><strong>Year Level:</strong> 1st Year — Regular</li>
+                    <li><strong>Section:</strong> CITCS 1E — Group A</li>
+                    <li><strong>Adviser:</strong> Felipe A. Pati, Jr., MCS, PhD</li>
                 </ul>
             </section>
 
-            <!-- 3. Technical Profile & Skills -->
             <section class="info-group">
                 <h2>Technical Profile</h2>
+
                 <ul class="info-list">
-                    <li><strong>Target Role :</strong> Web Developer</li>
-                    <li><strong>Programming Languages:</strong> HTML, CSS, Python, Java</li>
-                    <li><strong>Tools & Frameworks:</strong>VS Code, Linux</li>
-                    <li><strong>Certifications:</strong> In Progress
-                    </li>
-                </ul>
-            </section>
-            
-            <!-- 5. Personal Branding & Fillers -->
-            <section class="info-group">
-                <h2>Personal Insights</h2>
-                <ul class="info-list">
-                    <li><strong>Personal Motto:</strong> "memento vivere, memento amoris"</li>
-                    <li><strong>Hobbies:</strong> Writing, Gaming, Fitness, Music</li>
-                    <li><strong>Future Goal:</strong> Guaduate from University of the Cordilleras and provide for my family</li>
+                    <li><strong>Target Role:</strong> Web Developer</li>
+                    <li><strong>Languages:</strong> HTML, CSS, Python, Java</li>
+                    <li><strong>Tools:</strong> VS Code, Linux</li>
+                    <li><strong>Certifications:</strong> In Progress</li>
                 </ul>
             </section>
 
+            <section class="info-group">
+                <h2>Personal Insights</h2>
+
+                <ul class="info-list">
+                    <li><strong>Motto:</strong> “Memento vivere, memento amoris.”</li>
+                    <li><strong>Hobbies:</strong> Writing, gaming, fitness, music</li>
+                    <li><strong>Goal:</strong> Graduate from the University of the Cordilleras and provide for my family.</li>
+                </ul>
+            </section>
         </div>
 
     </main>
 
-
     <footer>
-        <p>© 2026 My Digital Portfolio</p>
+        <p>© 2026 Marc Jherrim Dumapis. All rights reserved.</p>
     </footer>
 
 </body>
+
 </html>
