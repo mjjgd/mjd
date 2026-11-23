@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Digital Portfolio</title>
+    <title>Marc Jherrim Dumapis | Digital Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,70 +16,97 @@
 <body>
 
     <header>
-        <nav>
-            <h2>My Portfolio</h2>
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <span class="brand-initial">M</span>
+                <span>Marc Jherrim Dumapis</span>
+            </a>
 
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="achievements.html">Achievements</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">Personal Information</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main class="home">
 
-        <!-- Two-column hero: Text on Left, Photo on Right -->
-        <div class="home-hero-layout">
-
-            <div class="home-text-col">
-                <p class="intro">MY DIGITAL PORTFOLIO</p>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Digital Portfolio</p>
 
                 <h1>
-                    Res gestae,<br>
-                    Ad meliora,<br>
+                    Res gestae.<br>
+                    Ad meliora.<br>
                     In futurum.
                 </h1>
 
-                <p class="home-description">
-                    A retrospective look at what is done, 
-                    my current endeavours, and the vision 
-                    I seek for myself. Learn more <a href="about.html">personal information</a> about me here.
+                <p class="hero-description">
+                    A retrospective look at what has been accomplished,
+                    my present endeavours, and the vision I continue to
+                    build for the future.
                 </p>
+
+                <div class="hero-actions">
+                    <a href="about.html" class="btn btn-primary">
+                        View Profile
+                    </a>
+
+                    <a href="achievements.html" class="btn btn-outline">
+                        See Achievements
+                    </a>
+                </div>
             </div>
 
-            <div class="profile-pic-container">
-                <img src="formalcordipic.png" alt="Marc Jherrim Dumapis">
+            <figure class="hero-photo">
+                <img src="formalcordipic.png" alt="Portrait of Marc Jherrim Dumapis">
+            </figure>
+        </section>
+
+        <section class="explore">
+            <div class="section-heading">
+                <p class="eyebrow">Explore</p>
+                <h2>My Journey</h2>
             </div>
 
-        </div>
+            <div class="card-grid">
+                <a href="about.html" class="feature-card">
+                    <span class="card-icon">👤</span>
 
-        <!-- 4-Column Journey Cards -->
-        <div class="journey-buttons four-cols">
+                    <div class="card-body">
+                        <h3>Personal Information</h3>
+                        <p>
+                            Background, experiences, interests, and
+                            accomplishments.
+                        </p>
+                    </div>
 
-            <a href="about.html" class="journey-card">
-                <span style='font-size:28px;'>📝</span>
-                <h2>Personal Information</h2>
-                <p>Accomplishments & experiences</p>
-                <span class="arrow">→</span>
-            </a>
+                    <span class="card-arrow">→</span>
+                </a>
 
-            <a href="achievements.html" class="journey-card">
-                <span style='font-size:28px;'>🏆</span>
-                <h2>Achievements</h2>
-                <p>Certificates, medals & milestones</p>
-                <span class="arrow">→</span>
-            </a>
+                <a href="achievements.html" class="feature-card">
+                    <span class="card-icon">🏅</span>
 
-        </div>
+                    <div class="card-body">
+                        <h3>Achievements</h3>
+                        <p>
+                            Certificates, awards, milestones, and academic
+                            recognition.
+                        </p>
+                    </div>
+
+                    <span class="card-arrow">→</span>
+                </a>
+            </div>
+        </section>
 
     </main>
 
-
     <footer>
-        <p>© 2026 My Digital Portfolio</p>
+        <p>© 2026 Marc Jherrim Dumapis. All rights reserved.</p>
     </footer>
 
 </body>
+
 </html>
