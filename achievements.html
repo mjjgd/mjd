@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievements | My Digital Portfolio</title>
+    <title>Achievements | Marc Jherrim Dumapis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,116 +16,117 @@
 <body>
 
     <header>
-        <nav>
-            <h2>My Portfolio</h2>
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <span class="brand-initial">M</span>
+                <span>Marc Jherrim Dumapis</span>
+            </a>
 
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="achievements.html" class="active">Achievements</a></li>
                 <li><a href="about.html">Personal Information</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main class="achievements-section">
 
-        <div class="achievements-header">
-            <p class="section-label">ACHIEVEMENTS</p>
+        <div class="section-heading center">
+            <p class="eyebrow">Achievements</p>
             <h1>Milestones & Recognition</h1>
         </div>
 
-        <!-- 5-Portion Overlapping Grid Layout -->
         <div class="achievements-grid">
-
-            <!-- Portion 1: Top-Left (Elementary) -->
-            <div class="achieve-card elem">
+            <article class="achieve-card elem">
                 <div class="card-logo">
-                    <img src="elem-logo.png" alt="Elementary School Logo">
+                    <img src="elem-logo.png" alt="Elementary school logo">
                 </div>
-                <div class="card-content">
-                    <span class="card-tag">01</span>
-                    <h3>Elementary</h3>
-                    <p class="bullet-list">
-                        &bull; Consistent Second Honor Student<br>
-                        &bull; Academic Excellence Awardee<br>
-                        &bull; Multi-Year Metrobank-MTAP-DepEd Math Challenge Delegate<br>
-                        &bull; School Badminton Club Member & Trainee<br>
-                        &bull; Boys' Brigade (BGB) Member / Active Cadet
-                    </p>
-                </div>
-            </div>
 
-            <!-- Portion 2: Top-Right (Junior High) -->
-            <div class="achieve-card jhs">
-                <div class="card-logo">
-                    <img src="jhs-logo.png" alt="Junior High School Logo">
-                </div>
                 <div class="card-content">
-                    <span class="card-tag">02</span>
-                    <h3>Junior High</h3>
-                    <p class="bullet-list">
-                        &bull; Active Math Club Member<br>
-                        &bull; Active Chemistry Club Member<br>
-                        &bull; Competitive Esports Participation<br>
-                        &bull; Life and Physical Sciences Webinar Participant<br>
-                        &bull; Completer, Junior High School Academic Program
-                    </p>
-                </div>
-            </div>
+                    <span class="card-tag">01 — Elementary</span>
+                    <h3>Academic Foundation</h3>
 
-            <!-- Portion 3: Center Wall Photo (Foreground Focus) -->
+                    <ul class="bullet-list">
+                        <li>Consistent Second Honor Student</li>
+                        <li>Academic Excellence Awardee</li>
+                        <li>Metrobank-MTAP-DepEd Math Challenge Delegate</li>
+                        <li>School Badminton Club Member and Trainee</li>
+                        <li>Boys’ Brigade Active Cadet</li>
+                    </ul>
+                </div>
+            </article>
+
             <div class="achieve-center-container">
                 <div class="achieve-wall-photo">
-                    <img src="achmainpic.jfif" alt="Wall with Certificates and Medals">
+                    <img src="achmainpic.jfif" alt="Wall displaying certificates and medals">
                 </div>
+
                 <span>Certificates & Medals</span>
             </div>
 
-            <!-- Portion 4: Bottom-Left (Senior High) -->
-            <div class="achieve-card shs">
+            <article class="achieve-card jhs">
                 <div class="card-logo">
-                    <img src="shs-logo.png" alt="Senior High School Logo">
+                    <img src="jhs-logo.png" alt="Junior high school logo">
                 </div>
-                <div class="card-content">
-                    <span class="card-tag">03</span>
-                    <h3>Senior High</h3>
-                    <p class="bullet-list">
-                        &bull; Research Defense Lead Presenter<br>
-                        &bull; Graduated as a Candidate for Best in Math<br>
-                        &bull; Graduated as a Candidate for ADTech (Arts and Design Technology)<br>
-                        &bull; Science Investigatory Project (SIP) Completer – BSU<br>
-                        &bull; Event Leader – Buwan ng Wika & School Intramurals
-                    </p>
-                </div>
-            </div>
 
-            <!-- Portion 5: Bottom-Right (Extracurriculars) -->
-            <div class="achieve-card extra">
-                <div class="card-logo icon-box">
-                    &#9889;
-                </div>
                 <div class="card-content">
-                    <span class="card-tag">04</span>
-                    <h3>Extracurriculars</h3>
-                    <p class="bullet-list">
-                        &bull; Best in Math (Kumon)<br>
-                        &bull; Multi-Year Bible Olympics Runner-up<br>
-                        &bull; Creative Writing & Literary Folio Contributor<br>
-                        &bull; Clinical & Diagnostic Sciences Workshop Participant<br>
-                        &bull; Regional Athletic Meet Volleyball Delegate (Libero)
-                    </p>
-                </div>
-            </div>
+                    <span class="card-tag">02 — Junior High</span>
+                    <h3>Academic Involvement</h3>
 
+                    <ul class="bullet-list">
+                        <li>Active Math Club Member</li>
+                        <li>Active Chemistry Club Member</li>
+                        <li>Competitive Esports Participant</li>
+                        <li>Life and Physical Sciences Webinar Participant</li>
+                        <li>Junior High School Program Completer</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="achieve-card shs">
+                <div class="card-logo">
+                    <img src="shs-logo.png" alt="Senior high school logo">
+                </div>
+
+                <div class="card-content">
+                    <span class="card-tag">03 — Senior High</span>
+                    <h3>Leadership & Research</h3>
+
+                    <ul class="bullet-list">
+                        <li>Research Defense Lead Presenter</li>
+                        <li>Candidate for Best in Mathematics</li>
+                        <li>Candidate for ADTech Recognition</li>
+                        <li>Science Investigatory Project Completer — BSU</li>
+                        <li>Event Leader — Buwan ng Wika and Intramurals</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="achieve-card extra">
+                <div class="card-logo icon-box">⚡</div>
+
+                <div class="card-content">
+                    <span class="card-tag">04 — Extracurricular</span>
+                    <h3>Skills & Recognition</h3>
+
+                    <ul class="bullet-list">
+                        <li>Best in Mathematics — Kumon</li>
+                        <li>Multi-Year Bible Olympics Runner-Up</li>
+                        <li>Creative Writing and Literary Folio Contributor</li>
+                        <li>Clinical and Diagnostic Sciences Workshop Participant</li>
+                        <li>Regional Athletic Meet Volleyball Delegate — Libero</li>
+                    </ul>
+                </div>
+            </article>
         </div>
 
     </main>
 
-
     <footer>
-        <p>© 2026 My Digital Portfolio</p>
+        <p>© 2026 Marc Jherrim Dumapis. All rights reserved.</p>
     </footer>
 
 </body>
+
 </html>
