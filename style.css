@@ -127,6 +127,7 @@ header {
 .home {
     flex: 1;
     min-height: 0;
+    overflow-y: auto;
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
@@ -206,25 +207,41 @@ header {
 .hero-photo {
     position: relative;
     max-width: 320px;
+    width: 100%;
     justify-self: end;
 }
 
 .hero-photo::before {
     content: "";
     position: absolute;
-    inset: -16px;
-    border-radius: 26px;
-    background: linear-gradient(135deg, var(--bronze-soft), transparent 65%);
+    inset: -12px;
+    border-radius: 28px;
+    background: radial-gradient(
+        circle at 65% 25%,
+        rgba(224, 178, 95, 0.22),
+        rgba(91, 157, 255, 0.08) 55%,
+        transparent 75%
+    );
     z-index: -1;
 }
 
 .hero-photo img {
     width: 100%;
-    height: min(46vh, 360px);
+    height: min(44vh, 350px);
     object-fit: cover;
+    object-position: 50% 15%;
     border-radius: 20px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(224, 178, 95, 0.28);
     box-shadow: var(--shadow);
+    filter: contrast(1.04) saturate(0.95);
+    -webkit-mask-image: radial-gradient(ellipse 92% 94% at 50% 48%, #000 72%, rgba(0, 0, 0, 0.25) 100%);
+    mask-image: radial-gradient(ellipse 92% 94% at 50% 48%, #000 72%, rgba(0, 0, 0, 0.25) 100%);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-photo img:hover {
+    transform: translateY(-3px);
+    border-color: rgba(224, 178, 95, 0.55);
 }
 
 .hero-photo figcaption {
@@ -882,6 +899,11 @@ footer p {
 
     .hero-photo {
         justify-self: center;
+        max-width: 240px;
+    }
+
+    .hero-photo img {
+        height: min(30vh, 240px);
     }
 
     .hero-description {
