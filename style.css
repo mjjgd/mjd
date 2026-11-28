@@ -1,4 +1,3 @@
-```css
 /* =========================================
    RESET & THEME
 ========================================= */
@@ -477,18 +476,8 @@ header {
     transition: 0.25s ease;
 }
 
-.info-group:nth-child(1) { transform: rotate(-2.5deg); }
-.info-group:nth-child(2) { transform: rotate(1.5deg) translateY(-4px); }
-.info-group:nth-child(3) { transform: rotate(-1.5deg) translateY(4px); }
-.info-group:nth-child(4) { transform: rotate(2.5deg); }
-.info-group:nth-child(5) { transform: rotate(-2deg) translateY(-3px); }
-.info-group:nth-child(6) { transform: rotate(2deg) translateY(3px); }
-.info-group:nth-child(7) { transform: rotate(-1.5deg) translateY(-2px); }
-.info-group:nth-child(8) { transform: rotate(1.5deg) translateY(2px); }
-.info-group:nth-child(9) { transform: rotate(-2.5deg); }
-
 .info-group:hover {
-    transform: rotate(0deg) translateY(-3px);
+    transform: translateY(-2px);
     border-color: rgba(201, 151, 63, 0.55);
     box-shadow:
         0 0 0 1px rgba(201, 151, 63, 0.18),
@@ -988,5 +977,3 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
-
-```
