@@ -824,6 +824,41 @@ header {
 }
 
 /* =========================================
+   FRIENDS — BLACK CLUBS PLAYING CARD
+========================================= */
+
+.club-card {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.07), transparent 55%),
+        linear-gradient(160deg, #0d1420 0%, #080d16 100%);
+    border: 1px solid rgba(230, 237, 246, 0.30);
+}
+
+.club-card:hover {
+    border-color: rgba(230, 237, 246, 0.65);
+    box-shadow:
+        0 0 0 1px rgba(230, 237, 246, 0.18),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.club-card .heart-corner {
+    color: #e6edf6;
+}
+
+.club-card .heart-photo {
+    border: 1px solid rgba(230, 237, 246, 0.30);
+}
+
+.club-card .heart-photo::before {
+    content: "♣";
+    color: rgba(230, 237, 246, 0.85);
+}
+
+.club-card .heart-content h3 {
+    color: #e6edf6;
+}
+
+/* =========================================
    FOOTER
 ========================================= */
 
