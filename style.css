@@ -22,13 +22,15 @@
     --bronze: #c9973f;
     --bronze-strong: #e0b25f;
     --bronze-soft: rgba(201, 151, 63, 0.20);
+    --heart: #ff6b81;
+    --heart-soft: rgba(255, 107, 129, 0.18);
     --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
 html,
 body {
     height: 100%;
-    overflow: hidden; /* Required: no scrolling */
+    overflow: hidden;
 }
 
 body {
@@ -240,7 +242,7 @@ header {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
 }
 
@@ -302,7 +304,7 @@ header {
 }
 
 /* =========================================
-   ABOUT PAGE — ROTATED CARDS & COLUMNS
+   ABOUT PAGE
 ========================================= */
 
 .section {
@@ -469,7 +471,7 @@ header {
 }
 
 /* =========================================
-   ACHIEVEMENTS — ORBITAL LAYOUT
+   ACHIEVEMENTS PAGE
 ========================================= */
 
 .achievements-section {
@@ -642,7 +644,6 @@ header {
     right: 0;
 }
 
-/* Wide horizontal center image */
 .achieve-center-container {
     position: relative;
     z-index: 2;
@@ -680,14 +681,136 @@ header {
     object-position: center;
 }
 
-.achieve-center-container span {
-    padding-top: 0.55rem;
-    text-align: center;
-    font-size: 0.68rem;
+/* =========================================
+   MY PEOPLE — HEARTS PLAYING CARDS
+========================================= */
+
+.hearts-section {
+    flex: 1;
+    min-height: 0;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.1rem;
+}
+
+.hearts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.15rem;
+    align-items: stretch;
+}
+
+.heart-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 50% 0%, var(--heart-soft), transparent 55%),
+        linear-gradient(160deg, #16233a 0%, #131f33 100%);
+    border: 1px solid rgba(201, 151, 63, 0.35);
+    border-radius: 18px;
+    padding: 0.85rem 0.85rem 0.95rem;
+    min-height: 0;
+    transition: 0.25s ease;
+}
+
+.heart-card:nth-child(1) {
+    transform: rotate(-3deg) translateY(-4px);
+}
+
+.heart-card:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+
+.heart-card:nth-child(3) {
+    transform: rotate(-1.5deg) translateY(3px);
+}
+
+.heart-card:nth-child(4) {
+    transform: rotate(3deg) translateY(-3px);
+}
+
+.heart-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+    border-color: rgba(255, 107, 129, 0.65);
+    box-shadow:
+        0 0 0 1px rgba(255, 107, 129, 0.20),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.heart-corner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Playfair Display", serif;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: var(--heart);
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.heart-corner.top {
+    margin-bottom: 0.55rem;
+}
+
+.heart-corner.bottom {
+    margin-top: 0.55rem;
+    transform: rotate(180deg);
+}
+
+.heart-symbol {
+    font-size: 1.05rem;
+}
+
+.heart-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 107, 129, 0.35);
+    background: var(--bg-soft);
+}
+
+.heart-photo::before {
+    content: "♥";
+    position: absolute;
+    top: 0.45rem;
+    right: 0.55rem;
+    color: rgba(255, 107, 129, 0.85);
+    font-size: 1.05rem;
+    z-index: 1;
+}
+
+.heart-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.heart-content {
+    flex: 1;
+    padding-top: 0.8rem;
+    text-align: center;
+}
+
+.heart-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
     color: var(--bronze-strong);
+    margin-bottom: 0.35rem;
+}
+
+.heart-content p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.45;
 }
 
 /* =========================================
@@ -730,13 +853,16 @@ footer p {
         justify-content: center;
     }
 
+    .card-grid,
     .cards,
-    .info-sections {
+    .info-sections,
+    .hearts-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .card,
-    .info-group {
+    .info-group,
+    .heart-card {
         transform: none;
     }
 
