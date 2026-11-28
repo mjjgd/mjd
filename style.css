@@ -40,7 +40,7 @@ body {
     color: var(--text);
     background:
         radial-gradient(circle at 12% 12%, rgba(91, 157, 255, 0.10), transparent 35%),
-        radial-gradient(circle at 88% 8%, rgba(91, 157, 255, 0.07), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(201, 151, 63, 0.08), transparent 35%),
         linear-gradient(160deg, #0b1120 0%, #101a2c 55%, #131f33 100%);
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@ header {
 }
 
 .navbar {
-    max-width: 1300px;
+    max-width: 1340px;
     margin: 0 auto;
     padding: 0.7rem 1.5rem;
     display: flex;
@@ -121,28 +121,37 @@ header {
 }
 
 /* =========================================
-   HOME PAGE
+   HOME PAGE — FULL-HEIGHT EDITORIAL SPLIT
 ========================================= */
 
 .home {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
-    max-width: 1300px;
+    max-width: 1340px;
     width: 100%;
     margin: 0 auto;
     padding: 1.5rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.75rem;
+    align-items: center;
 }
 
-.hero {
+.home-layout {
+    width: 100%;
+    height: 100%;
+    max-height: 760px;
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 3rem;
+}
+
+.home-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.25rem;
+    min-width: 0;
 }
 
 .eyebrow {
@@ -151,20 +160,21 @@ header {
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--bronze-strong);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.55rem;
 }
 
-.hero h1 {
+.hero-text h1 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
-    line-height: 1.08;
-    margin-bottom: 0.9rem;
+    font-size: clamp(2.2rem, 4.4vw, 3.45rem);
+    line-height: 1.06;
+    margin-bottom: 1rem;
 }
 
 .hero-description {
     max-width: 540px;
     color: var(--muted);
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.96rem;
 }
 
 .hero-actions {
@@ -176,7 +186,7 @@ header {
 .btn {
     display: inline-flex;
     align-items: center;
-    padding: 0.65rem 1.25rem;
+    padding: 0.68rem 1.3rem;
     border-radius: 999px;
     font-size: 0.88rem;
     font-weight: 600;
@@ -204,63 +214,100 @@ header {
     transform: translateY(-2px);
 }
 
-.hero-photo {
-    position: relative;
-    max-width: 320px;
-    width: 100%;
-    justify-self: end;
+/* =========================================
+   FULL-BODY PORTRAIT SHOWCASE (NO CROP, NO DEAD WIDTH)
+========================================= */
+
+.hero-showcase {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-photo::before {
-    content: "";
+.hero-photo {
+    position: relative;
+    height: min(76vh, 660px);
+    padding: 1.1rem 1.25rem 0.9rem;
+    border-radius: 26px;
+    background:
+        linear-gradient(180deg, rgba(201, 151, 63, 0.14) 0%, rgba(19, 31, 51, 0.72) 38%, rgba(11, 17, 32, 0.92) 100%);
+    border: 1px solid rgba(224, 178, 95, 0.30);
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-photo:hover {
+    transform: translateY(-4px);
+    border-color: rgba(224, 178, 95, 0.60);
+}
+
+/* Architectural bronze frame accent behind the silhouette */
+.photo-backdrop {
     position: absolute;
-    inset: -12px;
-    border-radius: 28px;
-    background: radial-gradient(
-        circle at 65% 25%,
-        rgba(224, 178, 95, 0.22),
-        rgba(91, 157, 255, 0.08) 55%,
-        transparent 75%
-    );
-    z-index: -1;
+    inset: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(224, 178, 95, 0.16);
+    background:
+        radial-gradient(circle at 50% 24%, rgba(224, 178, 95, 0.22), transparent 58%),
+        radial-gradient(circle at 50% 75%, rgba(91, 157, 255, 0.12), transparent 62%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .hero-photo img {
-    width: 100%;
-    height: min(44vh, 350px);
-    object-fit: cover;
-    object-position: 50% 15%;
-    border-radius: 20px;
-    border: 1px solid rgba(224, 178, 95, 0.28);
-    box-shadow: var(--shadow);
-    filter: contrast(1.04) saturate(0.95);
-    -webkit-mask-image: radial-gradient(ellipse 92% 94% at 50% 48%, #000 72%, rgba(0, 0, 0, 0.25) 100%);
-    mask-image: radial-gradient(ellipse 92% 94% at 50% 48%, #000 72%, rgba(0, 0, 0, 0.25) 100%);
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: calc(100% - 2.1rem);
+    max-width: 300px;
+    object-fit: contain;
+    object-position: center bottom;
+    border-radius: 12px;
+    filter: contrast(1.04) saturate(0.96) drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
 }
 
-.hero-photo img:hover {
-    transform: translateY(-3px);
-    border-color: rgba(224, 178, 95, 0.55);
+/* Grounding shadow under the shoes so you never look like you're floating */
+.photo-floor-shadow {
+    position: relative;
+    z-index: 1;
+    width: 68%;
+    height: 10px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0%, transparent 72%);
+    pointer-events: none;
 }
 
 .hero-photo figcaption {
-    margin-top: 0.55rem;
-    text-align: center;
-    font-size: 0.68rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 0.45rem;
+    font-size: 0.66rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--bronze-strong);
+    white-space: nowrap;
 }
 
 /* =========================================
-   EXPLORE CARDS
+   EXPLORE CARDS (STACKED CLEANLY ON LEFT)
 ========================================= */
+
+.section-heading {
+    margin-bottom: 0.85rem;
+}
 
 .section-heading h2 {
     font-family: "Playfair Display", serif;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .section-heading.center {
@@ -270,15 +317,15 @@ header {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.85rem;
 }
 
 .feature-card {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.1rem 1.25rem;
+    gap: 0.85rem;
+    padding: 0.95rem 1.05rem;
     background:
         linear-gradient(145deg, var(--bronze-soft) 0%, rgba(201, 151, 63, 0.06) 35%, rgba(19, 31, 51, 0) 70%),
         var(--surface);
@@ -299,13 +346,13 @@ header {
 }
 
 .card-icon {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     display: grid;
     place-items: center;
-    font-size: 1.25rem;
-    border-radius: 12px;
+    font-size: 1.15rem;
+    border-radius: 11px;
     background:
         linear-gradient(145deg, rgba(201, 151, 63, 0.30), rgba(201, 151, 63, 0.06) 60%, rgba(19, 31, 51, 0) 100%),
         var(--bg-soft);
@@ -314,20 +361,23 @@ header {
 
 .card-body {
     flex: 1;
+    min-width: 0;
 }
 
 .feature-card h3 {
-    font-size: 0.98rem;
-    margin-bottom: 0.2rem;
+    font-size: 0.92rem;
+    margin-bottom: 0.18rem;
 }
 
 .feature-card p {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--muted);
+    line-height: 1.35;
 }
 
 .card-arrow {
     color: var(--bronze-strong);
+    flex-shrink: 0;
 }
 
 /* =========================================
@@ -337,7 +387,8 @@ header {
 .section {
     flex: 1;
     min-height: 0;
-    max-width: 1300px;
+    overflow-y: auto;
+    max-width: 1340px;
     width: 100%;
     margin: 0 auto;
     padding: 1.25rem 1.5rem;
@@ -890,20 +941,16 @@ footer p {
    SMALL SCREENS
 ========================================= */
 
-@media (max-width: 1000px) {
-    .hero {
+@media (max-width: 1100px) {
+    .home-layout {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        max-height: none;
+        gap: 1.75rem;
+    }
+
+    .home-left {
         text-align: center;
-    }
-
-    .hero-photo {
-        justify-self: center;
-        max-width: 240px;
-    }
-
-    .hero-photo img {
-        height: min(30vh, 240px);
+        gap: 1.75rem;
     }
 
     .hero-description {
@@ -912,6 +959,15 @@ footer p {
 
     .hero-actions {
         justify-content: center;
+    }
+
+    .hero-showcase {
+        order: -1;
+        height: auto;
+    }
+
+    .hero-photo {
+        height: 360px;
     }
 
     .card-grid,
